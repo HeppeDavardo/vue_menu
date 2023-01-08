@@ -28,7 +28,7 @@ export default {
             token = data.data.token;
         })
         .then(() => {
-            fetch('https://helenamarias.com/wp-json/wp/v2/posts?status=private&categories=5',{
+            fetch('https://helenamarias.com/wp-json/wp/v2/posts?status=private&categories=9',{
                 method: 'GET',
                 headers: {
                     Authorization: `Bearer ${token}`
