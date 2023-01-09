@@ -9,33 +9,44 @@
     <p>{{toys[selectedToy].description}}</p>
   </div>
 </section> -->
-<FrokostComponent v-if="true"></FrokostComponent>
-<IndenMaden v-if="true"></IndenMaden>
-<SeasonMenu v-if="true"></SeasonMenu>
-<PizzaMenu v-if="true"></PizzaMenu>
-<AlaCarte v-if="true"></AlaCarte>
-<VinComp v-if="true"></VinComp>
-<DrikkevareComp v-if="true"></DrikkevareComp>
+  <section class="vueMenu">
+    <section class="menuNav">
+    <button class="menuNavBtn"
+      v-for="tab in tabs"
+      :key="tab"
+      :class="['tab-button', { active: currentTab === tab }]"
+      @click="currentTab = tab">
+      {{ tab }}
+    </button>
+  </section>
+    <component :is="currentTab" class="tab"></component>
+  </section>
 </template>
 
 <script>
-import FrokostComponent from './components/FrokostComponent.vue'
+import Frokost from './components/Frokost.vue'
 import IndenMaden from './components/IndenMaden.vue'
 import SeasonMenu from './components/SeasonMenu.vue'
-import PizzaMenu from './components/PizzaMenu.vue'
+import Pizza from './components/Pizza.vue'
 import AlaCarte from './components/AlaCarte.vue'
-import VinComp from './components/VinComp.vue'
-import DrikkevareComp from './components/DrikkevareComp.vue'
+import Vin from './components/Vin.vue'
+import Drikkevare from './components/Drikkevare.vue'
 
 export default {
   components: {
-    FrokostComponent,
+    Frokost,
     IndenMaden,
     SeasonMenu,
-    PizzaMenu,
+    Pizza,
     AlaCarte,
-    VinComp,
-    DrikkevareComp
+    Vin,
+    Drikkevare
+  },
+  data() {
+    return {
+      currentTab: 'Frokost',
+      tabs: ['Frokost', 'IndenMaden', 'SeasonMenu', 'Pizza', 'AlaCarte', 'Vin', 'Drikkevare'] 
+    }
   }
 }
 </script>
