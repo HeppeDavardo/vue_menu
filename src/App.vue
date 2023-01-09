@@ -1,14 +1,4 @@
 <template>
-<!-- <section class="vueMenu">
-  <section class="menuNav">
-    <button class="menuNavBtn" v-for="(toy, index) in toys" :key="toy.id" @click="selectToy(index)">{{toy.name}}</button>
-  </section>
-  <div v-if="selectedToy != undefined" id="toyDisplay" @click="resetToy()">
-    <h2>{{toys[selectedToy].name}}</h2>
-    <img :src="'./assets/img/' + toys[selectedToy].url" alt="">
-    <p>{{toys[selectedToy].description}}</p>
-  </div>
-</section> -->
   <section class="vueMenu">
     <section class="menuNav">
     <button class="menuNavBtn"
@@ -79,8 +69,7 @@ export default {
   border: none;
   text-align: left;
   font-size: 20px;
-  font-weight: normal;
-  
+  font-weight: normal; 
   cursor: pointer;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div id="tab"></div>
+    <div id="ret"></div>
 </template>
 
 <script>
@@ -37,7 +37,7 @@ export default {
             .then(response => response.json())
             .then(data => { 
                 console.log(data);
-                let ret = document.querySelector('#tab');
+                let ret = document.querySelector('#ret');
 
 
                 for (let i = data.length-1; i >= 0; i--) {
